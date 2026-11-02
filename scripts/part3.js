@@ -1,0 +1,57 @@
+﻿import fs from 'fs';
+
+const p3 = [
+  {
+    id: 'kotlin-lang', title: 'Kotlin Masterclass: Modern Android & Multiplatform', subtitle: 'Master Kotlin 2.0, Null Safety, Coroutines, Flow, Jetpack Compose, and Kotlin Multiplatform.',
+    category: 'Mobile & Multiplatform', difficulty: 'Beginner to Advanced', hours: 42, rating: 4.97, reviews: 2600, language: 'Kotlin', icon: '🎯',
+    instructor: { name: 'Philipp Lackner', role: 'Android Specialist', avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80', bio: 'Mobile app creator.' },
+    mods: [
+      { id: 'mod-kotlin-1', title: 'Module 1: Kotlin Syntax, Null Safety & Types', desc: 'val/var, null safety, Elvis operator (?:), and smart casts.', video: 'https://www.youtube-nocookie.com/embed/F9UC9DY-vIU', starter: 'fun main() {\n    val app = "Kotlin 2.0"\n    val opt: String? = null\n    println("$app - Fallback: ${opt ?: "Default"}")\n}' },
+      { id: 'mod-kotlin-2', title: 'Module 2: Data Classes, Extension Functions & Lambdas', desc: 'Data classes, custom extensions, and higher-order functions.', video: 'https://www.youtube-nocookie.com/embed/5flXf8nuq60', starter: 'data class User(val id: Int, val name: String)\nfun String.exclaim() = "$this!"\nfun main() {\n    println(User(1, "Elena"))\n    println("Kotlin".exclaim())\n}' },
+      { id: 'mod-kotlin-3', title: 'Module 3: Coroutines, Flow Streams & Compose', desc: 'suspend functions, Coroutines, Flow, and UI architecture.', video: 'https://www.youtube-nocookie.com/embed/BBwyX_B6z0s', starter: 'fun main() {\n    println("Coroutines enable non-blocking concurrent pipelines in Kotlin.")\n}' }
+    ]
+  },
+  {
+    id: 'swift-lang', title: 'Swift & SwiftUI Masterclass: iOS & macOS App Engineering', subtitle: 'Master Swift 5.9/6, Protocol-Oriented Programming, Optionals, Closures, and SwiftUI architecture.',
+    category: 'Mobile & Apple Platforms', difficulty: 'Beginner to Advanced', hours: 45, rating: 4.98, reviews: 2900, language: 'Swift', icon: '🍎',
+    instructor: { name: 'Sean Allen', role: 'Staff iOS Engineer', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80', bio: 'iOS engineer and educator.' },
+    mods: [
+      { id: 'mod-swift-1', title: 'Module 1: Swift Basics, Optionals & Control Flow', desc: 'Constants, variables, optional binding (if let / guard let).', video: 'https://www.youtube-nocookie.com/embed/U3aXWizDbQ4', starter: 'let track = "Swift Masterclass"\nvar score: Int? = 98\nif let s = score { print("\\(track) - Score: \\(s)") }' },
+      { id: 'mod-swift-2', title: 'Module 2: Structs, Protocols & Extensions', desc: 'Value types (structs), protocol contracts, and extensions.', video: 'https://www.youtube-nocookie.com/embed/cw_3r_y1zYc', starter: 'protocol Identifiable { var id: String { get } }\nstruct App: Identifiable { let id: String }\nprint("App ID: \\(App(id: "app-101").id)")' },
+      { id: 'mod-swift-3', title: 'Module 3: SwiftUI Declarative UI & State Management', desc: '@State, @Binding, View hierarchy, and reactive UI updates.', video: 'https://www.youtube-nocookie.com/embed/b1ZC431y3AM', starter: 'print("SwiftUI updates UI views automatically when @State variables mutate.")' }
+    ]
+  },
+  {
+    id: 'ruby-lang', title: 'Ruby & Rails Masterclass: Full-Stack Web Development', subtitle: 'Master Ruby 3.2, Object-Oriented Mixins, Blocks, Procs, Lambdas, Metaprogramming, and Ruby on Rails.',
+    category: 'Web & Full-Stack', difficulty: 'Beginner to Intermediate', hours: 38, rating: 4.94, reviews: 1950, language: 'Ruby', icon: '💎',
+    instructor: { name: 'Yukihiro Matsumoto & Team', role: 'Ruby Core Contributor', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80', bio: 'Dedicated to developer productivity.' },
+    mods: [
+      { id: 'mod-ruby-1', title: 'Module 1: Ruby Syntax, Symbols & OOP Basics', desc: 'Dynamic typing, symbols, string interpolation, and classes.', video: 'https://www.youtube-nocookie.com/embed/t_ispmWmdjY', starter: 'class Course; attr_accessor :title; end\nc = Course.new; c.title = "Ruby 3.2"\nputs "Active: #{c.title}"' },
+      { id: 'mod-ruby-2', title: 'Module 2: Blocks, Procs, Lambdas & Enumerable', desc: 'Custom block yields, Procs, Lambdas, and Enumerable methods.', video: 'https://www.youtube-nocookie.com/embed/Dji9ALCgFP8', starter: 'def run_twice; yield; yield; end\nrun_twice { puts "Yielded block executed" }' },
+      { id: 'mod-ruby-3', title: 'Module 3: Ruby on Rails MVC & Metaprogramming', desc: 'ActiveRecord, ActionController, routes, and metaprogramming.', video: 'https://www.youtube-nocookie.com/embed/fmyvWz5TUWg', starter: 'puts "Rails follows Convention over Configuration (CoC)."' }
+    ]
+  },
+  {
+    id: 'dart-lang', title: 'Dart & Flutter Masterclass: Cross-Platform Mobile', subtitle: 'Master Dart 3.x, Sound Null Safety, Futures, Streams, Mixins, and Flutter mobile architecture.',
+    category: 'Mobile & Multiplatform', difficulty: 'Beginner to Intermediate', hours: 38, rating: 4.96, reviews: 2200, language: 'Dart', icon: '🎯',
+    instructor: { name: 'Lucas Scott', role: 'Lead Flutter Engineer', avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80', bio: 'Mobile engineer.' },
+    mods: [
+      { id: 'mod-dart-1', title: 'Module 1: Dart Syntax, Null Safety & Collections', desc: 'Variables, records, patterns, sound null safety, and lists/maps.', video: 'https://www.youtube-nocookie.com/embed/Ej_Pcr4uC2Q', starter: 'void main() {\n  final app = "Dart 3.x";\n  print("Running on $app with sound null safety.");\n}' },
+      { id: 'mod-dart-2', title: 'Module 2: OOP, Mixins & Abstract Classes', desc: 'Classes, mixins, factory constructors, and interfaces.', video: 'https://www.youtube-nocookie.com/embed/5F-6n_2XWR8', starter: 'mixin Logger { void log(String m) => print("[LOG] $m"); }\nclass Service with Logger {}\nvoid main() => Service().log("Ready");' },
+      { id: 'mod-dart-3', title: 'Module 3: Futures, Streams & Async Flutter Architecture', desc: 'Futures, async/await, Stream controllers, and state management.', video: 'https://www.youtube-nocookie.com/embed/1gDhl4leEzA', starter: 'Future<String> load() async => "Data loaded";\nvoid main() async => print(await load());' }
+    ]
+  },
+  {
+    id: 'r-lang', title: 'R Programming: Statistical Analysis & Data Science', subtitle: 'Master R 4.x, Vectorization, Data Frames, Tidyverse (dplyr), and ggplot2 visualizations.',
+    category: 'Data Science & Stats', difficulty: 'Beginner to Intermediate', hours: 36, rating: 4.95, reviews: 1800, language: 'R', icon: '📊',
+    instructor: { name: 'Dr. Evelyn Ward', role: 'Lead Biostatistician', avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80', bio: '20+ years statistical computing.' },
+    mods: [
+      { id: 'mod-r-1', title: 'Module 1: R Syntax, Vectors & Vectorized Math', desc: 'Vector arithmetic, 1-based indexing, factors, and matrices.', video: 'https://www.youtube-nocookie.com/embed/_V8eKsto3Ug', starter: 'x <- c(10, 20, 30, 40)\nprint(paste("Mean value:", mean(x)))' },
+      { id: 'mod-r-2', title: 'Module 2: Data Frames & Tidyverse Data Wrangling', desc: 'Data frames, filter, select, mutate, and summarization in R.', video: 'https://www.youtube-nocookie.com/embed/BvKETZ6kr9Q', starter: 'df <- data.frame(item = c("A", "B"), score = c(95, 88))\nprint(summary(df))' },
+      { id: 'mod-r-3', title: 'Module 3: ggplot2 Visualizations & Statistical Modeling', desc: 'Grammar of graphics, aesthetics, and linear regression models.', video: 'https://www.youtube-nocookie.com/embed/9kYUGMg_14s', starter: 'print("ggplot2 creates layered publication-quality charts.")' }
+    ]
+  }
+];
+
+fs.writeFileSync('scripts/courses_part3.json', JSON.stringify(p3, null, 2), 'utf8');
+console.log('Saved part 3');

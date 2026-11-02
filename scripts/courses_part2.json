@@ -1,0 +1,207 @@
+[
+  {
+    "id": "typescript-lang",
+    "title": "TypeScript Masterclass: Type Systems & Scalable Architecture",
+    "subtitle": "Master static typing, generics, union/intersection types, keyof, conditional types, and enterprise architecture.",
+    "category": "Web & Full-Stack",
+    "difficulty": "Intermediate to Advanced",
+    "hours": 38,
+    "rating": 4.97,
+    "reviews": 2450,
+    "language": "TypeScript",
+    "icon": "🔷",
+    "instructor": {
+      "name": "Elena Rostova",
+      "role": "Principal Systems Architect",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "bio": "Compiler engineer and author."
+    },
+    "mods": [
+      {
+        "id": "mod-ts-1",
+        "title": "Module 1: Static Types, Interfaces & Type Aliases",
+        "desc": "Strict types, interfaces, optional fields, and type annotations.",
+        "video": "https://www.youtube-nocookie.com/embed/BwuLxPH8IDs",
+        "starter": "interface Student { id: number; name: string; }\nconst s: Student = { id: 101, name: \"Elena\" };\nconsole.log(`Student ${s.name} (${s.id})`);"
+      },
+      {
+        "id": "mod-ts-2",
+        "title": "Module 2: Generics, Unions & Type Narrowing",
+        "desc": "Generic functions/classes, discriminated unions, and type guards.",
+        "video": "https://www.youtube-nocookie.com/embed/d56mG7DezGs",
+        "starter": "function wrap<T>(item: T): T[] { return [item]; }\nconsole.log(wrap<string>(\"TypeScript\"));\nconsole.log(wrap<number>(42));"
+      },
+      {
+        "id": "mod-ts-3",
+        "title": "Module 3: Utility Types (Partial, Pick) & Mapped Types",
+        "desc": "Partial, Readonly, Record, Pick, Omit, and conditional types.",
+        "video": "https://www.youtube-nocookie.com/embed/zQnBQ4tB3ZA",
+        "starter": "interface User { id: number; name: string; email: string; }\ntype Patch = Partial<User>;\nconst update: Patch = { name: \"New Name\" };\nconsole.log(update);"
+      }
+    ]
+  },
+  {
+    "id": "csharp-lang",
+    "title": "C# Masterclass: Modern .NET 8 & Enterprise Architecture",
+    "subtitle": "Master C# 12, .NET 8, LINQ, Entity Framework Core, asynchronous Tasks, records, and dependency injection.",
+    "category": "Enterprise Engineering",
+    "difficulty": "Beginner to Advanced",
+    "hours": 44,
+    "rating": 4.96,
+    "reviews": 2100,
+    "language": "C#",
+    "icon": "💜",
+    "instructor": {
+      "name": "David Miller",
+      "role": "Microsoft MVP",
+      "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80",
+      "bio": "20+ years in .NET enterprise architectures."
+    },
+    "mods": [
+      {
+        "id": "mod-cs-1",
+        "title": "Module 1: C# 12 Core Syntax & Control Flow",
+        "desc": "Types, methods, top-level statements, and namespaces in C#.",
+        "video": "https://www.youtube-nocookie.com/embed/GhQdlIFylQ8",
+        "starter": "using System;\npublic class Program {\n    public static void Main() {\n        Console.WriteLine(\"C# 12 & .NET 8 Running!\");\n    }\n}"
+      },
+      {
+        "id": "mod-cs-2",
+        "title": "Module 2: LINQ Queries, Collections & Records",
+        "desc": "LINQ query syntax, IEnumerable, lambda filters, and records.",
+        "video": "https://www.youtube-nocookie.com/embed/wxznTygnRfQ",
+        "starter": "using System;\nusing System.Linq;\npublic class Program {\n    public static void Main() {\n        int[] nums = { 1, 2, 3, 4, 5, 6 };\n        Console.WriteLine(\"Evens: \" + string.Join(\", \", nums.Where(n => n % 2 == 0)));\n    }\n}"
+      },
+      {
+        "id": "mod-cs-3",
+        "title": "Module 3: Asynchronous Tasks (async/await) & .NET 8 API",
+        "desc": "Tasks, async/await pipelines, and cloud microservice patterns.",
+        "video": "https://www.youtube-nocookie.com/embed/0QUgvfuKvWU",
+        "starter": "using System;\nusing System.Threading.Tasks;\npublic class Program {\n    public static async Task Main() {\n        await Task.Delay(10);\n        Console.WriteLine(\"Async Task complete in .NET 8\");\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "golang-lang",
+    "title": "Go (Golang) Masterclass: High-Throughput Cloud Microservices",
+    "subtitle": "Master Go 1.22, Goroutines, Channels, CSP concurrency, HTTP microservices, and high-performance backend architecture.",
+    "category": "Systems & Backend",
+    "difficulty": "Beginner to Intermediate",
+    "hours": 36,
+    "rating": 4.98,
+    "reviews": 3100,
+    "language": "Go",
+    "icon": "🦫",
+    "instructor": {
+      "name": "Klaus Richter",
+      "role": "Principal Systems Engineer",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "bio": "Building distributed infrastructure in Go."
+    },
+    "mods": [
+      {
+        "id": "mod-go-1",
+        "title": "Module 1: Go Syntax, Packages, Structs & Pointers",
+        "desc": "Packages, structs, receiver methods, and explicit error handling.",
+        "video": "https://www.youtube-nocookie.com/embed/YS4e4q9oBaU",
+        "starter": "package main\nimport \"fmt\"\ntype Server struct { Host string; Port int }\nfunc main() {\n    s := Server{\"localhost\", 8080}\n    fmt.Printf(\"Server on %s:%d\\n\", s.Host, s.Port)\n}"
+      },
+      {
+        "id": "mod-go-2",
+        "title": "Module 2: Goroutines, Channels & CSP Concurrency",
+        "desc": "Lightweight Goroutines, buffered channels, select, and sync.",
+        "video": "https://www.youtube-nocookie.com/embed/yyUHQIec83I",
+        "starter": "package main\nimport \"fmt\"\nfunc main() {\n    ch := make(chan string, 1)\n    ch <- \"Go Concurrent Pipeline Active\"\n    fmt.Println(<-ch)\n}"
+      },
+      {
+        "id": "mod-go-3",
+        "title": "Module 3: Implicit Interfaces & HTTP REST Microservices",
+        "desc": "Interfaces, net/http microservices, and JSON encoding.",
+        "video": "https://www.youtube-nocookie.com/embed/446E-r0rXHI",
+        "starter": "package main\nimport \"fmt\"\ntype Worker interface { Work() string }\ntype Bot struct{}\nfunc (b Bot) Work() string { return \"Bot processing jobs\" }\nfunc main() {\n    var w Worker = Bot{}\n    fmt.Println(w.Work())\n}"
+      }
+    ]
+  },
+  {
+    "id": "rust-lang",
+    "title": "Rust Programming: Memory Safety Without Garbage Collection",
+    "subtitle": "Master ownership, borrowing, lifetimes, pattern matching, traits, concurrency, and WebAssembly.",
+    "category": "Systems & WebAssembly",
+    "difficulty": "Intermediate to Advanced",
+    "hours": 50,
+    "rating": 4.99,
+    "reviews": 3800,
+    "language": "Rust",
+    "icon": "🦀",
+    "instructor": {
+      "name": "Elena Rostova",
+      "role": "Systems Architect",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "bio": "Compiler engineer."
+    },
+    "mods": [
+      {
+        "id": "mod-rust-1",
+        "title": "Module 1: Rust Syntax, Mutability & Types",
+        "desc": "Variables, mutability, functions, and control flow in Rust.",
+        "video": "https://www.youtube-nocookie.com/embed/MsocPEZBd-M",
+        "starter": "fn main() {\n    let mut count = 0;\n    count += 1;\n    println!(\"Rust counter: {}\", count);\n}"
+      },
+      {
+        "id": "mod-rust-2",
+        "title": "Module 2: Ownership, Borrowing & Lifetimes",
+        "desc": "Single-ownership model, references (&), and borrow checker rules.",
+        "video": "https://www.youtube-nocookie.com/embed/ygL_xcgkrtQ",
+        "starter": "fn get_length(s: &String) -> usize { s.len() }\nfn main() {\n    let text = String::from(\"EduMind\");\n    println!(\"Length: {}\", get_length(&text));\n}"
+      },
+      {
+        "id": "mod-rust-3",
+        "title": "Module 3: Enums, Pattern Matching, Traits & Error Handling",
+        "desc": "Option, Result, match expressions, traits, and zero-cost abstractions.",
+        "video": "https://www.youtube-nocookie.com/embed/5C_HPTJg5ek",
+        "starter": "enum Status { Ok(i32), Err }\nfn main() {\n    match Status::Ok(200) {\n        Status::Ok(code) => println!(\"Success code: {}\", code),\n        Status::Err => println!(\"Failed\"),\n    }\n}"
+      }
+    ]
+  },
+  {
+    "id": "php-lang",
+    "title": "Modern PHP 8 & Web Application Architecture",
+    "subtitle": "Master PHP 8.3, OOP, PDO database security, MVC architecture, REST APIs, and modern PHP ecosystem.",
+    "category": "Web & Full-Stack",
+    "difficulty": "Beginner to Intermediate",
+    "hours": 36,
+    "rating": 4.95,
+    "reviews": 2300,
+    "language": "PHP",
+    "icon": "🐘",
+    "instructor": {
+      "name": "Marc Dubois",
+      "role": "Web Architect",
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80",
+      "bio": "18+ years web engineering."
+    },
+    "mods": [
+      {
+        "id": "mod-php-1",
+        "title": "Module 1: PHP 8 Basics, Superglobals & Arrays",
+        "desc": "Variables, superglobals, associative arrays, and loops.",
+        "video": "https://www.youtube-nocookie.com/embed/OK_JCtrrv-c",
+        "starter": "<?php\n$data = [\"framework\" => \"PHP 8.3\", \"status\" => \"active\"];\necho \"Status: \" . $data[\"framework\"];"
+      },
+      {
+        "id": "mod-php-2",
+        "title": "Module 2: PHP 8 OOP & Constructor Promotion",
+        "desc": "Constructor promotion, typed properties, and match expressions.",
+        "video": "https://www.youtube-nocookie.com/embed/2eebptXfEvw",
+        "starter": "<?php\nclass User {\n    public function __construct(public string $name) {}\n}\n$u = new User(\"Elena\");\necho \"User: \" . $u->name;"
+      },
+      {
+        "id": "mod-php-3",
+        "title": "Module 3: PDO Database Security & JSON REST APIs",
+        "desc": "PDO prepared statements, transactions, and REST endpoints.",
+        "video": "https://www.youtube-nocookie.com/embed/MYyJ4PuL4pY",
+        "starter": "<?php\nheader(\"Content-Type: application/json\");\necho json_encode([\"status\" => 200, \"message\" => \"API Ready\"]);"
+      }
+    ]
+  }
+]
